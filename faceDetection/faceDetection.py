@@ -3,7 +3,7 @@ import cv2
 captura = cv2.VideoCapture(0)
 
 ## Classificador
-classificadorFace = cv2.CascadeClassifier('haarcascade.xml')
+classificadorFace = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 while(1):
     ret, frame = captura.read()
