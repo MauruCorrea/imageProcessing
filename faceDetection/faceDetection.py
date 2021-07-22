@@ -7,10 +7,11 @@ classificadorFace = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 while(1):
     ret, frame = captura.read()
-    ##converta para cinza
+    ##converter para cinza
     frameGray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     ##detecta a face utilizando um classificador 
     faceDetection = classificadorFace.detectMultiScale(frameGray,minSize=(20,20))
+    ##Desenha o retangulo na face
     for(x,y,l,a) in faceDetection:
         cv2.rectangle(frame, (x,y), (x+l, y+a), (0,0,255), 2) 
 
